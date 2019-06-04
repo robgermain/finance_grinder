@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount_paid: 9.99
+  payment_date: 
+  confirmation_number: MyString
+
+two:
+  amount_paid: 9.99
+  payment_date: 
+  confirmation_number: MyString

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Due date:</strong>
+  <%= @bill.due_date %>
+</p>
+
+<p>
+  <strong>Minimum due:</strong>
+  <%= @bill.minimum_due %>
+</p>
+
+<%= link_to 'Edit', edit_bill_path(@bill) %> |
+<%= link_to 'Back', bills_path %>

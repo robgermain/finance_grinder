@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name,:</strong>
+  <%= @billing_account.name, %>
+</p>
+
+<p>
+  <strong>Is active:</strong>
+  <%= @billing_account.is_active %>
+</p>
+
+<%= link_to 'Edit', edit_billing_account_path(@billing_account) %> |
+<%= link_to 'Back', billing_accounts_path %>

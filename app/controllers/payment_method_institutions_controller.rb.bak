@@ -1,0 +1,58 @@
+class PaymentMethodInstitutionsController < ApplicationController
+
+    def index
+        @payment_method_institutions = PaymentMethodInstitution.all
+    end
+
+    def show
+    end
+
+    def new
+        @payment_method_institution = PaymentMethodInstitution.new
+    end
+
+    def edit
+    end
+
+    def create
+        @payment_method_institutions = PaymentMethodInstitution.new(payment_method_institution_params)
+
+        respond_to do |format|
+            if @payment_method_institution.save
+                format.html { redirect_to @payment_method_institution, notice: 'Payment method institution was successfully created.' }
+                format.json { render :show, status: :created, location @payment_method_institution }
+            else
+                format.html{ render :new }
+                format.json { render json: @payment_method_institution.errors, status: :unprocessable_entity }
+            end
+        end
+    end
+
+    def update
+        respond_to do |format|
+            if @payment_method_institution.update(payment_method_institution_params)
+                format.html { redirect_to @payment_method_institution, notice: 'Payment method institution was successfully updated.' }
+                format.json { render :show, status: :ok, location @payment_method_institution }
+            else
+                format.html{ render :edit }
+                format.json { render json: @payment_method_institution.errors, status: :unprocessable_entity }
+            end
+        end
+    end
+    def destroy
+      @payment_method_institution.destroy
+      respond_to do |format|
+        format.html { redirect_to payment_method_institutions_url, notice: 'PaymentMethodInstitution was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    end
+  
+    private
+        def set_payment_method_institution
+            @payment_method_institution = PaymentMethodInstitution.find(params[:id])
+        end
+
+        def payment_method_institution_params
+            params.require(:payment_method_institution).permit(:name)
+      end
+end

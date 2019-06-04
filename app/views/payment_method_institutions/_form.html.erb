@@ -1,0 +1,22 @@
+<%= form_for(payment_method_institution) do |f| %>
+  <% if payment_method_institution.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(payment_method_institution.errors.count, "error") %> prohibited this payment_method_institution from being saved:</h2>
+
+      <ul>
+      <% payment_method_institution.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
