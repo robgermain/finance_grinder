@@ -14,3 +14,12 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+ActiveSupport::Inflector.inflections(:en) do |inflect|
+	inflect.irregular 'bill', 'bills'
+	inflect.irregular 'bill_payment', 'bill_payments'
+	inflect.irregular 'billing_account', 'billing_accounts'
+	inflect.irregular 'payment_method', 'payment_methods'
+	inflect.irregular 'payment_method_category', 'payment_method_categories'
+    inflect.irregular 'payment_method_institution', 'payment_method_institutions'
+end

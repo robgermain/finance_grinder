@@ -10,10 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190604171135) do
+ActiveRecord::Schema.define(version: 20190617024031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bill_payments", force: :cascade do |t|
+    t.decimal  "amount_paid",         precision: 10, scale: 2
+    t.date     "payment_date"
+    t.string   "confirmation_number"
+    t.integer  "bill_id"
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+  end
+
+  create_table "billing_accounts", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "is_active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bills", force: :cascade do |t|
+    t.date     "due_date"
+    t.decimal  "minimum_amount_due", precision: 10, scale: 2
+    t.integer  "billing_account_id"
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+  end
 
   create_table "payment_method_categories", force: :cascade do |t|
     t.string   "name"
@@ -25,6 +49,15 @@ ActiveRecord::Schema.define(version: 20190604171135) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "payment_methods", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "is_active"
+    t.integer  "payment_method_institution_id"
+    t.integer  "payment_method_category_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
 end

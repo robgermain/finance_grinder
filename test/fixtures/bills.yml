@@ -2,8 +2,10 @@
 
 one:
   due_date: 
-  minimum_due: 9.99
+  minimum_amount_due: 9.99
+  billing_account_id: 1
 
 two:
   due_date: 
-  minimum_due: 9.99
+  minimum_amount_due: 9.99
+  billing_account_id: 1

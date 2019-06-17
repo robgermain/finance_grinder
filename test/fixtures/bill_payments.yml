@@ -3,9 +3,11 @@
 one:
   amount_paid: 9.99
   payment_date: 
-  confirmation_number: MyString
+  confirmation_number,: MyString
+  bill_id: 1
 
 two:
   amount_paid: 9.99
   payment_date: 
-  confirmation_number: MyString
+  confirmation_number,: MyString
+  bill_id: 1
