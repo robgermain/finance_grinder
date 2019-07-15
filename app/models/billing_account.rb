@@ -1,3 +1,3 @@
 class BillingAccount < ApplicationRecord
-	has_many: bills
+	has_many :bills
 end
