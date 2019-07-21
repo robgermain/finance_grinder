@@ -47,7 +47,7 @@ class PaymentMethodCategoriesController < ApplicationController
     end
 
     def payment_method_category_params
-        @payment_method_category.require(:payment_method_category).permit(:name)
+        params.require(:payment_method_category).permit(:name)
     end
 
 end

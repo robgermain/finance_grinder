@@ -11,14 +11,19 @@
         <% @payment_method_categories.each do |payment_method_category| %>
             <tr>
                 <td>x.</td>
-                <td><%= link_to payment_method_category.name, payment_method_category_path(path) %></td>
+                <td><%= link_to payment_method_category.name, payment_method_categories_path(payment_method_category) %></td>
                 <td>
-                    <%= link_to 'Edit', edit_payment_method_category_path(payment_method_category) %>
-                    <%= link_to 'Delete', payment_method_category_path(payment_method_category), method: :delete, data: {confirm: "Are you sure?"} %></td>
+                    <%# <%= link_to 'Edit', payment_method_category_edit_path(payment_method_category) %> %>
+                    <%# <%= link_to 'Edit', payment_method_categories_edit_path(payment_method_category) %> %>
+                    <%# <%= link_to 'Edit', edit_payment_method_category_path(payment_method_category) %> %>
+                    <%# <%= link_to 'Edit', edit_payment_method_categories_path(payment_method_category) %> %>
+                    <%= link_to 'Edit', payment_method_categories_path(payment_method_category) %>
+
+                    <%= link_to 'Delete', payment_method_categories_path(payment_method_category), method: :delete, data: {confirm: "Are you sure?"} %>
                 </td>
             </tr>
         <% end %>
     </tbody>
 </table>
 
-<%= link_to 'Add Payment Method Category', new_payment_method_category_path %>
+<%= link_to 'Add Payment Method Category', payment_method_categories_new_path %>
