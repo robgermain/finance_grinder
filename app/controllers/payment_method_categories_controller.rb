@@ -17,8 +17,9 @@ class PaymentMethodCategoriesController < ApplicationController
     end
 
     def create
-        if PaymentMethodCategory.create!(payment_method_category_params)
-            flash[:success] = "Payment Method Category Added"
+        if PaymentMethodCategory.create(payment_method_category_params)
+            # flash[:success] = "Payment Method Category Added"
+            redirect_to root_path
         else
             render :new
         end
@@ -33,7 +34,7 @@ class PaymentMethodCategoriesController < ApplicationController
     end
 
     def destroy
-        if PaymentMethodCategory.destroy(payment_method_category_params)
+        if PaymentMethodCategory.destroy(params.require(:id))
             redirect_to root_path
         else
             render :index

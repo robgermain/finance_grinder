@@ -13,13 +13,10 @@
                 <td>x.</td>
                 <td><%= link_to payment_method_category.name, payment_method_categories_path(payment_method_category) %></td>
                 <td>
-                    <%# <%= link_to 'Edit', payment_method_category_edit_path(payment_method_category) %> %>
-                    <%# <%= link_to 'Edit', payment_method_categories_edit_path(payment_method_category) %> %>
-                    <%# <%= link_to 'Edit', edit_payment_method_category_path(payment_method_category) %> %>
-                    <%# <%= link_to 'Edit', edit_payment_method_categories_path(payment_method_category) %> %>
-                    <%= link_to 'Edit', payment_method_categories_path(payment_method_category) %>
+                    <%= payment_method_category_url(payment_method_category.id) %>
 
-                    <%= link_to 'Delete', payment_method_categories_path(payment_method_category), method: :delete, data: {confirm: "Are you sure?"} %>
+                    <%= link_to 'Edit', edit_payment_method_category_url(payment_method_category) %>
+                    <%= link_to 'Delete', payment_method_category_url(payment_method_category), method: :delete, data: {confirm: "Are you sure?"} %>
                 </td>
             </tr>
         <% end %>

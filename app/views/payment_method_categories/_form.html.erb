@@ -1,5 +1,7 @@
 
-<%= form_for(@payment_method_category, url: url) do |f| %>
+<%= form_for(@payment_method_category, url: url, method: :method) do |f| %>
+    <%= f.hidden_field :id %>
+
     <%= f.label :name, 'Name' %>
     <%= f.text_field :name %>
 
