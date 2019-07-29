@@ -26,7 +26,8 @@ class PaymentMethodCategoriesController < ApplicationController
     end
 
     def update
-        if PaymentMethodCategory.update(payment_method_category_params)
+        payment_method_category = PaymentMethodCategory.find(params[:id])
+        if payment_method_category.update(payment_method_category_params)
             redirect_to root_path
         else
             render :edit
