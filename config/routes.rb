@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   root to: 'payment_method_categories#index'
   resources :payment_method_categories
 
+  resources :payment_methods
+
 end

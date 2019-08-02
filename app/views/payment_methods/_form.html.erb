@@ -1,0 +1,16 @@
+<%= form_for @payment_method do |f| %>
+    <%= f.hidden_field :id %>
+
+    <%= f.label :name, 'Name' %>
+    <%= f.text_field :name %>
+
+    <br/><br/>
+
+    <%= f.label :payment_method_category_id, 'Category' %>
+    <%= f.collection_select :payment_method_category_id, PaymentMethodCategory.all, :id, :name, include_blank: '- SELECT -' %>
+
+    <br/><br/>
+
+    <%= f.submit 'Save Payment Method' %>
+
+<% end %>

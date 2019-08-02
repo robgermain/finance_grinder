@@ -6,14 +6,8 @@ class PaymentMethodCategoriesController < ApplicationController
         @payment_method_categories = PaymentMethodCategory.all
     end
 
-    def show
-    end
-
     def new
         @payment_method_category = PaymentMethodCategory.new
-    end
-
-    def edit
     end
 
     def create
