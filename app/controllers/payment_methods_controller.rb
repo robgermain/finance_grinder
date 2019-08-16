@@ -11,7 +11,7 @@ class PaymentMethodsController < ApplicationController
     end
 
     def create
-        if PaymentMethod.create(payment_method_params)
+        if PaymentMethod.create!(payment_method_params)
             redirect_to payment_methods_path
         else
             render :new
@@ -20,7 +20,7 @@ class PaymentMethodsController < ApplicationController
 
     def update
         payment_method = PaymentMethod.find(params[:id])
-        if PaymentMethod.update(payment_method_params)
+        if payment_method.update!(payment_method_params)
             redirect_to payment_methods_path
         else
             render :edit
@@ -42,7 +42,7 @@ class PaymentMethodsController < ApplicationController
     end
 
     def payment_method_params
-        params.require(:payment_method).permit(:name, :payment_method_category_id)
+        params.require(:payment_method).permit(:name, :payment_method_category_id, :payment_method_institution_id)
     end
 
 end
