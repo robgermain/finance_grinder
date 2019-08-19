@@ -1,0 +1,24 @@
+<h1>Payment Method Institutions</h1>
+<table>
+<thead>
+        <tr>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">Name</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @payment_method_institutions.each_with_index do |payment_method_institution, index| %>
+            <tr>
+                <td><%= index+1 %>.</td>
+                <td><%= link_to payment_method_institution.name, payment_method_institutions_path(payment_method_institution) %></td>
+                <td>
+                    <%= link_to 'Edit', edit_payment_method_institution_url(payment_method_institution) %>
+                    <%= link_to 'Delete', payment_method_institution_url(payment_method_institution), method: :delete, data: {confirm: "Are you sure?"} %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<%= link_to 'Add Payment Method Institution', new_payment_method_institution_path %>

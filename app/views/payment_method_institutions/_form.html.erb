@@ -1,0 +1,11 @@
+<%= form_for @payment_method_institution do |f| %>
+    <%= f.hidden_field :id %>
+
+    <%= f.label :name, 'Name' %>
+    <%= f.text_field :name %>
+
+    <br/><br/>
+
+    <%= f.submit 'Save Payment Method Institution' %>
+
+<% end %>
